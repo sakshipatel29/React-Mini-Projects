@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './CSS/stopwatch.css';
+// import './CSS/stopwatch.css';
 const StopWatch = () => {
     const [time, setTime] = useState(0);
     const [running, setRunning] = useState(false);
@@ -17,7 +17,7 @@ const StopWatch = () => {
     }, [running]);
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+        <div className="flex flex-col items-center justify-top bg-gray-100 w-70 h-70">
             <div className="flex items-center justify-center gap-2 py-4 text-2xl font-bold text-gray-800">
                 <h2 className="text-lg font-semibold text-blue-600 mr-4">Stop Watch</h2>
                 <span>{('0' + Math.floor((time / 60000) % 60)).slice(-2)}:</span>
