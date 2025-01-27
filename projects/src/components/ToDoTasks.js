@@ -9,6 +9,7 @@ const ToDoTasks = () => {
     console.log(taskList);
 
     return (
+        <>
         <div className="todo-container">
             <h1 className="todo-header">To-Do Tasks</h1>
             <div className="todo-input-section">
@@ -17,12 +18,17 @@ const ToDoTasks = () => {
 
             <ul className="todo-task-list">
                 {taskList.map((task, index) => (
-                    <li key={index}>{task}</li>
+                    <BoardForTask 
+                        key={index}
+                        task={task}
+                        index={index}
+                        taskList={taskList}
+                        setTaskList={setTaskList}
+                    />
                 ))}
             </ul>
-
-            <BoardForTask />
         </div>
+        </>
     );
 }
 

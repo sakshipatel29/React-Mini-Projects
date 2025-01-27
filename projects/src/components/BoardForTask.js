@@ -1,9 +1,21 @@
 import React from 'react'
+import './CSS/BoardForTask.css'
 
-const BoardForTask = () => {
+const BoardForTask = ({task, index, taskList, setTaskList}) => {
+
+  const handleDelete = () => {
+    let removeIndex = taskList.indexOf(task);
+    taskList.splice(removeIndex,1);
+    setTaskList((currentTask => currentTask.filter(todo => index === removeIndex)))
+  }
   return (
-    <div>BoardForTask</div>
+    <>
+    <div>
+      <p>{task}</p>
+      <button onClick={handleDelete}>Delete</button>
+    </div>
+    </>
   )
 }
 
-export default BoardForTask
+export default BoardForTask;
