@@ -1,34 +1,7 @@
-// import React, {  useState } from 'react'
-// import InputForTask from './InputForTask'
-// import BoardForTask from './BoardForTask'
-
-
-// const ToDoTasks = () => {
-//     const [taskList, setTaskList] = useState('');
-
-//     console.log(taskList);
-
-
-//   return (
-//     <div>
-//     <InputForTask taskList={taskList} setTaskList={setTaskList}/>
-
-//     <div>
-//     {taskList.map((task, index) => 
-//         <li key={index}>{task}</li>
-//     )}
-//     </div>
-
-//     <BoardForTask />
-//     </div>
-//   )
-// }
-
-// export default ToDoTasks
-
 import React, { useState } from 'react';
 import InputForTask from './InputForTask';
 import BoardForTask from './BoardForTask';
+import './CSS/ToDoTasks.css'; // Import the CSS file
 
 const ToDoTasks = () => {
     const [taskList, setTaskList] = useState([]); // Initialize as an empty array
@@ -36,16 +9,19 @@ const ToDoTasks = () => {
     console.log(taskList);
 
     return (
-        <div>
-            <InputForTask taskList={taskList} setTaskList={setTaskList} />
+        <div className="todo-container">
+            <h1 className="todo-header">To-Do Tasks</h1>
+            <div className="todo-input-section">
+                <InputForTask taskList={taskList} setTaskList={setTaskList} />
+            </div>
 
-            <div>
+            <ul className="todo-task-list">
                 {taskList.map((task, index) => (
                     <li key={index}>{task}</li>
                 ))}
-            </div>
+            </ul>
 
-            
+            <BoardForTask />
         </div>
     );
 }
