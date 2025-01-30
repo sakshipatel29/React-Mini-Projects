@@ -6,13 +6,21 @@ import ToDoTasks from './components/ToDoTasks';
 
 function App() {
   return (
-    <div className="App">
-    <div className="box">
-      <StopWatch />
-      <ToDoTasks />
-      <StateAndProp />
-      <ReactForm />
-    </div>
+    <div className="app">
+      <div className="grid-container">
+        <div className="component-card">
+          <StopWatch />
+        </div>
+        <div className="component-card">
+          <ToDoTasks />
+        </div>
+        <div className="component-card">
+          <StateAndProp />
+        </div>
+        <div className="component-card">
+          <ReactForm />
+        </div>
+      </div>
     </div>
   );
 }

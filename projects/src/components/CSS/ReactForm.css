@@ -1,0 +1,132 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Form Container */
+.form-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 450px;
+}
+
+/* Headings */
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Fieldset */
+fieldset {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+legend {
+    font-weight: bold;
+    color: #555;
+}
+
+/* Input Groups */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.name-inputs {
+    display: flex;
+    gap: 10px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Prompt Section */
+.prompt-section {
+    margin-top: 10px;
+}
+
+.prompt-group {
+    background: #fafafa;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.prompt-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.prompt-header select {
+    width: 80%;
+}
+
+textarea {
+    margin-top: 10px;
+    resize: none;
+}
+
+/* Buttons */
+button {
+    cursor: pointer;
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.add-btn {
+    display: block;
+    background-color: #007bff;
+    color: white;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.add-btn:hover {
+    background-color: #0056b3;
+}
+
+.delete-btn {
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    padding: 5px;
+    width: 30px;
+}
+
+.delete-btn:hover {
+    background-color: darkred;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    .form-container {
+        width: 100%;
+        padding: 15px;
+    }
+}

@@ -1,0 +1,20 @@
+/* Button Container */
+.button-container {
+    margin-top: 15px;
+}
+
+/* Hide Button */
+.hide-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.hide-button:hover {
+    background-color: #cc0000;
+}

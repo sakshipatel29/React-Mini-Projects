@@ -1,136 +1,64 @@
-/* .App {
-  text-align: center;
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.box {
-  justify-content: center;
-  border: 2px solid #ccc;
-  padding: 20px;
-  margin: 20px;
-  width: 80%;
-  align-items: center;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #f9f9f9;
-  
-  display: flex;
-  flex-direction: column;
-}
-
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
-/* Centering the entire app */
-.App {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background-color: #f4f4f9; /* Soft background */
-  font-family: Arial, sans-serif;
-}
-
-/* Logo animation */
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-  animation: App-logo-spin infinite 20s linear;
-}
-
-/* Box styling */
-.box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  
-  width: 80%;
-  max-width: 600px; /* Prevents it from stretching too wide */
-  padding: 30px;
-  margin: 20px auto;
-  
-  border: 2px solid #ccc;
-  border-radius: 10px; /* Rounded corners */
-  background-color: #fff; /* White background */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
-}
-
-/* Header Styling */
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  
-  font-size: calc(10px + 2vmin);
-  color: white;
-  padding: 20px;
+body, html {
+  height: 100%;
   width: 100%;
+  font-family: 'Arial', sans-serif;
+  background-color: #8db2c2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Links */
-.App-link {
-  color: #61dafb;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease-in-out;
+/* App Container */
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  background: #bc93c1;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-.App-link:hover {
-  color: #ffcc00;
+/* Grid Layout for 2x2 View */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns, each taking equal space */
+  grid-template-rows: repeat(2, 1fr);    /* 2 rows, each taking equal space */
+  gap: 10px; /* Adds space between grid items */
+  width: 100%;
+  height: 100%;
 }
 
-/* Animation */
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Styling for each component */
+.component-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-/* Responsive adjustments */
+/* Styling for individual components to ensure they are centered */
+.component-card > * {
+  margin-bottom: 10px;
+}
+
+/* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
-  .box {
-    width: 90%;
-    padding: 20px;
+  .grid-container {
+      grid-template-columns: 1fr; /* Stack components vertically on smaller screens */
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import './CSS/BoardForTask.css'
+import './CSS/BoardForTask.css';
 
 const BoardForTask = ({task, index, taskList, setTaskList}) => {
 
