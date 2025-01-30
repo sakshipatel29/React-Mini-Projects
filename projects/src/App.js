@@ -6,9 +6,11 @@ import ToDoTasks from './components/ToDoTasks';
 function App() {
   return (
     <div className="App">
+    <div className="box">
       <StopWatch />
       <ToDoTasks />
       <StateAndProp />
+    </div>
     </div>
   );
 }

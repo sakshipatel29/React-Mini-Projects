@@ -16,14 +16,16 @@ let articles = [];
 })();
 
 let app = express();
-app.use(cors);
+app.use(cors());
 
 app.get('/', (req,res) => {
     res.send(articles);
-})
+});
 
-const server = app.listen('4000', () => {
-    console.log("App is running at http://localhost:4000");
+
+
+const server = app.listen('5001', () => {
+    console.log("App is running at http://localhost:5001");
 })
 
 export default server;
