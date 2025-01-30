@@ -1,4 +1,5 @@
 import './App.css';
+import ReactForm from './components/ReactForm';
 import StateAndProp from './components/StateAndProp';
 import StopWatch from './components/StopWatch';
 import ToDoTasks from './components/ToDoTasks';
@@ -10,6 +11,7 @@ function App() {
       <StopWatch />
       <ToDoTasks />
       <StateAndProp />
+      <ReactForm />
     </div>
     </div>
   );

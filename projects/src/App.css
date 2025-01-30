@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -14,14 +14,20 @@
 }
 
 .box {
+  justify-content: center;
   border: 2px solid #ccc;
   padding: 20px;
   margin: 20px;
   width: 80%;
+  align-items: center;
   margin-left: auto;
   margin-right: auto;
   background-color: #f9f9f9;
+  
+  display: flex;
+  flex-direction: column;
 }
+
 
 .App-header {
   background-color: #282c34;
@@ -44,5 +50,87 @@
   }
   to {
     transform: rotate(360deg);
+  }
+} */
+
+/* Centering the entire app */
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f4f4f9; /* Soft background */
+  font-family: Arial, sans-serif;
+}
+
+/* Logo animation */
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+  animation: App-logo-spin infinite 20s linear;
+}
+
+/* Box styling */
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  width: 80%;
+  max-width: 600px; /* Prevents it from stretching too wide */
+  padding: 30px;
+  margin: 20px auto;
+  
+  border: 2px solid #ccc;
+  border-radius: 10px; /* Rounded corners */
+  background-color: #fff; /* White background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Header Styling */
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 20px;
+  width: 100%;
+}
+
+/* Links */
+.App-link {
+  color: #61dafb;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.App-link:hover {
+  color: #ffcc00;
+}
+
+/* Animation */
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .box {
+    width: 90%;
+    padding: 20px;
   }
 }
