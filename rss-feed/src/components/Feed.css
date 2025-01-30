@@ -1,0 +1,42 @@
+/* Feed card container styling */
+.feed-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 280px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    margin-bottom: 20px;
+}
+
+.feed-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Link styling */
+.feed-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* Title styling */
+.feed-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2278d4;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.feed-title:hover {
+    color: #3264aa;
+}
+
+/* Date styling */
+.feed-date {
+    font-size: 14px;
+    color: #555;
+    margin-top: 5px;
+}
