@@ -3,7 +3,7 @@ import InputForTask from './InputForTask';
 import BoardForTask from './BoardForTask';
 import './CSS/ToDoTasks.css'; // Import the CSS file
 
-const ToDoTasks = () => {
+export const ToDoTasks = () => {
     const [taskList, setTaskList] = useState([]); // Initialize as an empty array
 
     console.log(taskList);

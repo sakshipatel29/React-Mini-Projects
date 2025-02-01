@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import OnChange from './OnChange';
 import './CSS/StateAndProp.css';//  // Import the CSS file
 
-const StateAndProp = () => {
+export const StateAndProp = () => {
     const [username, setUsername] = useState("");
 
     const setName = (e) => {
