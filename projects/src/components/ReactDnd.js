@@ -1,27 +1,25 @@
-
 import React, { useEffect, useState } from 'react';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import Note from './Note';
 import Bin from './Bin';
+import './CSS/ReactDnd.css'; 
 
 const ReactDnd = () => {
-  const [newNote, setNewNote] = useState(""); // For storing the value of the new note input
-  const [notes, setNotes] = useState([]);  // For storing all notes
+  const [newNote, setNewNote] = useState(""); 
+  const [notes, setNotes] = useState([]); 
   const [binnedItems, setBinnedItems] = useState([]);
 
-  // Handler for adding a new note
   const handleAddNote = () => {
-    if (newNote.trim()) { // Only add non-empty notes
+    if (newNote.trim()) {
       const updatedNotes = [...notes, newNote];
       setNotes(updatedNotes);
-      localStorage.setItem("notesList", JSON.stringify(updatedNotes)); // Save updated notes to localStorage
-      setNewNote(""); // Clear input field after adding note
+      localStorage.setItem("notesList", JSON.stringify(updatedNotes));
+      setNewNote("");
     }
   };
 
   useEffect(() => {
-    // Load notes from localStorage if available
     const storedNotes = localStorage.getItem("notesList");
     if (storedNotes) {
       try {
@@ -29,70 +27,69 @@ const ReactDnd = () => {
         if (Array.isArray(parsedNotes)) {
           setNotes(parsedNotes);
         } else {
-          setNotes([]);  // Set empty array if stored data is not valid
+          setNotes([]);
         }
       } catch (e) {
         console.error("Error parsing notes from localStorage", e);
-        setNotes([]);  // Set empty array if parsing fails
+        setNotes([]);
       }
     }
   }, []);
 
   useEffect(() => {
-    // Load binned items from localStorage
     let storedBinnedItems = localStorage.getItem("binnedItems");
     if (storedBinnedItems) {
       try {
         const parsedBinnedItems = JSON.parse(storedBinnedItems);
         if (Array.isArray(parsedBinnedItems)) {
           setBinnedItems(parsedBinnedItems);
-          // Filter out binned items from notes
           setNotes((prevNotes) => prevNotes.filter((note) => !parsedBinnedItems.includes(note)));
         } else {
-          setBinnedItems([]); // Set empty array if binned items are not valid
+          setBinnedItems([]);
         }
       } catch (e) {
         console.error("Error parsing binnedItems from localStorage", e);
-        setBinnedItems([]); // Set empty array if parsing fails
+        setBinnedItems([]);
       }
     }
   }, []);
 
   const handleBinNote = (note) => {
-    // Add the note to the binnedItems
     setBinnedItems((prevBinnedItems) => {
       const updatedBinnedItems = [...prevBinnedItems, note];
       localStorage.setItem("binnedItems", JSON.stringify(updatedBinnedItems));
       return updatedBinnedItems;
     });
 
-    // Remove the note from the notes list
     setNotes((prevNotes) => prevNotes.filter((n) => n !== note));
   };
 
   return (
     <DndProvider backend={HTML5Backend}>
-      <div>
-        <div>
+      <div className="container">
+        <div className="add-note-container">
           <input
-            id='add-note'
-            placeholder='Add notes here...'
-            value={newNote}  // Bind input value to state
-            onChange={(e) => setNewNote(e.target.value)}  // Update newNote state on input change
+            id="add-note"
+            className="note-input"
+            placeholder="Add notes here..."
+            value={newNote}
+            onChange={(e) => setNewNote(e.target.value)}
           />
-          <button onClick={handleAddNote}>Add</button>
+          <button className="add-button" onClick={handleAddNote}>Add</button>
         </div>
-        {notes.map((item) => (
-          <Note 
-            key={item} 
-            note={item} 
-            onBin={handleBinNote}  // Passing the onBin function to Node component
-          />
-        ))}
+        <div className="notes-container">
+          {notes.map((item) => (
+            <Note 
+              key={item} 
+              note={item} 
+              onBin={handleBinNote}
+            />
+          ))}
+        </div>
         <Bin binnedItems={binnedItems} />
       </div>
     </DndProvider>
   );
-}
+};
 
 export default ReactDnd;

@@ -1,0 +1,29 @@
+.bin {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    width: 300px;
+    min-height: 200px;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.bin.can-drop {
+    border-color: green;
+}
+
+.bin.is-over {
+    background-color: #e0ffe0;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+div {
+    margin-top: 10px;
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}

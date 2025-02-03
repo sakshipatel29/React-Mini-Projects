@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDrag } from 'react-dnd';
+import './CSS/Note.css';
 
 const Node = ({ note, onBin }) => {
   const [{ isDragging }, drag] = useDrag(() => ({
@@ -18,7 +19,10 @@ const Node = ({ note, onBin }) => {
   }));
 
   return (
-    <div ref={drag}>
+    <div 
+      ref={drag} 
+      className={`node ${isDragging ? 'dragging' : ''}`}
+    >
       {note}
     </div>
   );
