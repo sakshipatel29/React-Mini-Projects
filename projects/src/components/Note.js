@@ -1,9 +1,27 @@
-import React from 'react'
+import React from 'react';
+import { useDrag } from 'react-dnd';
 
-const Node = () => {
+const Node = ({ note, onBin }) => {
+  const [{ isDragging }, drag] = useDrag(() => ({
+    type: "note",
+    item: { name: note },
+    end: (item, monitor) => {
+      const dropResult = monitor.getDropResult();
+      if (item && dropResult) {
+        alert(`You threw ${item.name} into ${dropResult.name}`);
+        onBin(item.name);
+      }
+    },
+    collect: (monitor) => ({
+      isDragging: !!monitor.isDragging(),
+    }),
+  }));
+
   return (
-    <div>Node</div>
-  )
+    <div ref={drag}>
+      {note}
+    </div>
+  );
 }
 
-export default Node
+export default Node;
