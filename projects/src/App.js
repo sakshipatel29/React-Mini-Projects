@@ -1,8 +1,4 @@
 import './App.css';
-// import ReactForm from './components/ReactForm';
-// import StateAndProp from './components/StateAndProp';
-// import StopWatch from './components/StopWatch';
-// import ToDoTasks from './components/ToDoTasks';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'; 
 import Dashboard from './components/Dashboard';
 import Recommendations from './components/Recommendations';
@@ -14,6 +10,7 @@ import ToDoTasks from './components/ToDoTasks';
 import StateAndProp from './components/StateAndProp';
 import ReactForm from './components/ReactForm';
 import { useState } from 'react';
+import ReactDnd from './components/ReactDnd';
 
 function App() {
   const [user, setUser] = useState("Saifali")
@@ -30,6 +27,7 @@ function App() {
             <Route path='/todotask' element={<ToDoTasks />} />
             <Route path='/stateandprops' element={<StateAndProp />} />
             <Route path='/reactform' element={<ReactForm />} />
+            <Route path='/reactdnd' element={<ReactDnd />} />
           </Routes>
           </UserContext.Provider>
         </BrowserRouter>
