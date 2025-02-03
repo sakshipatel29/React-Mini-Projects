@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
-import Node from './Node';
+import Note from './Note';
 import Bin from './Bin';
 
 const ReactDnd = () => {
@@ -21,7 +21,7 @@ const ReactDnd = () => {
     return (
         <DndProvider backend={HTML5Backend}>
             <div>
-                <Node />
+                <Note />
                 <Bin />
             </div>
         </DndProvider>
