@@ -5,6 +5,7 @@ I have added different different React topic projects inside here.
 2. To do list
 3. States and Props
 4. Dynamic React Form
+5. React Drag and Drop for adding notes and moving it to bin. [React DnD](https://react-dnd.github.io/react-dnd)
 
 # Getting Started with Create React App
 
