@@ -4,8 +4,9 @@ I have added different different React topic projects inside here.
 1. Stopwatch
 2. To do list
 3. States and Props
-4. Dynamic React Form
+4. Dynamic React Form 
 5. React Drag and Drop for adding notes and moving it to bin. [React DnD](https://react-dnd.github.io/react-dnd)
+6. Use Of React Hook "useReducer". [useReducer](https://react.dev/reference/react/useReducer)
 
 # Getting Started with Create React App
 
