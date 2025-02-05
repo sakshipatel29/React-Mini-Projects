@@ -11,6 +11,7 @@ import StateAndProp from './components/StateAndProp';
 import ReactForm from './components/ReactForm';
 import { useState } from 'react';
 import ReactDnd from './components/ReactDnd';
+import UseReducer from './components/Reducer';
 
 function App() {
   const [user, setUser] = useState("Saifali")
@@ -28,6 +29,7 @@ function App() {
             <Route path='/stateandprops' element={<StateAndProp />} />
             <Route path='/reactform' element={<ReactForm />} />
             <Route path='/reactdnd' element={<ReactDnd />} />
+            <Route path='/usereducer' element={<UseReducer />} />
           </Routes>
           </UserContext.Provider>
         </BrowserRouter>

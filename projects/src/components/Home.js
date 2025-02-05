@@ -17,6 +17,7 @@ export const Home = () => {
         <Link to="/stateandprops">State And Props</Link>
         <Link to="/reactform">React Dynamic Form</Link>
         <Link to="/reactdnd">React Drag and Drop</Link>
+        <Link to="/usereducer">Use Reducer</Link>
         </div>
     )
 }
