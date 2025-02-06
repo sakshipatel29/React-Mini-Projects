@@ -3,7 +3,7 @@ import './CSS/OnChange.css'; // Import the CSS file
 
 const OnChange = ({ setUsername }) => {
     const hideUsername = () => {
-        setUsername("");
+        setUsername("there");
     };
 
     return (
