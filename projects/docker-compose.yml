@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  react-app:
+    image: node:18  # Use Node.js 18 image
+    container_name: react-container
+    working_dir: /app
+    volumes:
+      - .:/app  # Mount current directory to /app in container
+      - /app/node_modules  # Prevent overwriting node_modules
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+    command: >
+      sh -c "npm install && npm start"
+    stdin_open: true
+    tty: true
